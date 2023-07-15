@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------------------------------------------------------------
+v1.0
+
+* All code has been updated for The Burning Crusade however the quest database has yet to be
+  updated. All pre-bc quests are working. Please be patient.
+
+* Astrolabe has been updated to the 2.4.3 version so quest objectives should now be properly
+  displayed on the Minimap, Worldmap.
+
+* QuestieArrow (TomTom and CrazyTaxi) have been updated to the 2.4.3 version.
+
+* Questie modules use the ace2 libraries and all have been updated to the 2.4.3 version.
+
+* During development I discovered a small issue with MiniMapButtonBag. I've added code to
+  automatically insert an exclusion into MBB's savedvariables.
+
+* Additional check code was inserted to handle any BC quests that haven't been added to the
+  database yet.
+
+* I had to increase the size of the Available Quest and Completed Quest icons to cover-up the
+  default Blizzard Minimap Blips. These icons can't be disabled and thier tooltips were blocking
+  Questies informative tooltips. To help compensate I've added some distence code into the Minimap.
+  Any Questie icons appearing on the Minimap will be hidden beyond 200 yards. The Worldmap is
+  unaffected and quest objectives as well as available quests and completed quest icon blips will
+  show up on the world map.
+
+* I've added a version check to Questie. If you upgrade from an ealier version of Questie and if
+  the client version differs from your SavedVariables version then a Popup will appear upon first
+  login asking you to perform a database upgrade. This is a neccessary step to ensure that all
+  key values are properly populated and that the database is checked for stale entires. If you
+  suddenly find yourself staring at a bunch of Available Quest icons for quests you know you've
+  completed then your database had invalid entries for that quest. Please use the worldmap and
+  Shift + Click the quest to manually complete it and it will be marked as complete in your database.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+eof
