@@ -739,8 +739,7 @@ QuestieFastSlash = {
 				for i,v in pairs(GetQuestsCompleted()) do
 					QuestieSeenQuests[i] = 1;
 				end
-				DEFAULT_CHAT_FRAME:AddMessage("Populating complete. Reloading...", 1, 1, 1);
-			ReloadUI()
+				DEFAULT_CHAT_FRAME:AddMessage("Populating complete.", 1, 1, 1);
 			end,
 			timeout = 60,
 			exclusive = 1,
