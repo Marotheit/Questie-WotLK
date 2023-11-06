@@ -728,6 +728,9 @@ function Questie:getQuestHash(name, level, objectiveText)
 		end
 	end
 	
+	print("Quest not found: " .. name);
+	QuestieQuestHashCache[name..hashLevel..hashText] = 0;
+	return 0,hasOthers;
 end
 ---------------------------------------------------------------------------------------------------
 -- Checks to see if a quest is finished by quest hash
