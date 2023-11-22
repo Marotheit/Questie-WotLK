@@ -34,7 +34,6 @@ Database\events.lua
 Database\zone.lua
 Database\lookup.lua
 Database\meta.lua
-Database\provided.lua
 Database\npcs.lua
 Database\objs.lua
 Database\items.lua
