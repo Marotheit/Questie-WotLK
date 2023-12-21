@@ -374,6 +374,7 @@ end
 -- Tooltip code for quest starters and finishers
 ---------------------------------------------------------------------------------------------------
 function Questie_Tooltip_OnEnter()
+	WorldMapPOIFrame.allowBlobTooltip = false
 	if(this.data.questHash) then
 		local Tooltip = GameTooltip;
 		if(this.type == "WorldMapNote") then
@@ -492,7 +493,7 @@ function Questie:CreateBlankFrameNote()
 	t:SetAllPoints(f)
 	f.texture = t
 	f:SetScript("OnEnter", Questie_Tooltip_OnEnter); --Script Toolip
-	f:SetScript("OnLeave", function() if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
+	f:SetScript("OnLeave", function() WorldMapPOIFrame.allowBlobTooltip = true if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
 	f:SetScript("OnClick", Questie_AvailableQuestClick);
 	f:RegisterForClicks("LeftButtonDown", "RightButtonDown");
 	CREATED_NOTE_FRAMES = CREATED_NOTE_FRAMES+1;
@@ -709,7 +710,7 @@ function Questie:DRAW_NOTES()
 						Icon:SetPoint("CENTER", 0, 0)
 						Icon.type = "WorldMapNote";
 						Icon:SetScript("OnEnter", Questie_Tooltip_OnEnter); --Script Toolip
-						Icon:SetScript("OnLeave", function() if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
+						Icon:SetScript("OnLeave", function() WorldMapPOIFrame.allowBlobTooltip = true if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
 						Icon:SetScript("OnClick", Questie_AvailableQuestClick);
 						Icon:RegisterForClicks("LeftButtonDown", "RightButtonDown");
 						if(z == 0 and c == 0) then--Both continents
@@ -747,7 +748,7 @@ function Questie:DRAW_NOTES()
 						Icon:SetPoint("CENTER",0,0)
 						Icon.type = "WorldMapNote";
 						Icon:SetScript("OnEnter", Questie_Tooltip_OnEnter); --Script Toolip
-						Icon:SetScript("OnLeave", function() if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
+						Icon:SetScript("OnLeave", function() WorldMapPOIFrame.allowBlobTooltip = true if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
 						Icon:SetScript("OnClick", Questie_AvailableQuestClick);
 						Icon:RegisterForClicks("LeftButtonDown", "RightButtonDown");
 						if(z == 0 and c == 0) then--Both continents
@@ -789,7 +790,7 @@ function Questie:DRAW_NOTES()
 				Icon:SetPoint("CENTER", 0, 0)
 				Icon.type = "WorldMapNote";
 				Icon:SetScript("OnEnter", Questie_Tooltip_OnEnter); --Script Toolip
-				Icon:SetScript("OnLeave", function() if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
+				Icon:SetScript("OnLeave", function() WorldMapPOIFrame.allowBlobTooltip = true if(WorldMapTooltip) then WorldMapTooltip:Hide() end if(GameTooltip) then GameTooltip:Hide() end end) --Script Exit Tooltip
 				Icon:SetWidth(14*QUESTIE_NOTES_MAP_ICON_SCALE)  -- Set These to whatever height/width is needed
 				Icon:SetHeight(14*QUESTIE_NOTES_MAP_ICON_SCALE) -- for your Texture
 				Icon:SetScript("OnClick", Questie_AvailableQuestClick);
